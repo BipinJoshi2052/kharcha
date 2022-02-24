@@ -20,3 +20,9 @@ use App\Http\Controllers\KharchaController;
 
 Route::get('/',[KharchaController::class,'index'])->name('kharcha');
 Route::post('/kharcha-add',[KharchaController::class,'add'])->name('kharcha-add');
+
+Route::get('clear', function () {
+    Artisan::call('cache:clear');
+    Artisan::call('config:clear');
+    Artisan::call('config:cache');
+});
