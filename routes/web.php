@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\KharchaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/',[KharchaController::class,'index'])->name('kharcha');
+Route::post('/kharcha-add',[KharchaController::class,'add'])->name('kharcha-add');
+
+Route::get('clear', function () {
+    Artisan::call('cache:clear');
+    Artisan::call('config:clear');
+    Artisan::call('config:cache');
 });
