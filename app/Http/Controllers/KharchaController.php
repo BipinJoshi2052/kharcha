@@ -121,6 +121,8 @@ class KharchaController extends Controller
     }
 
     public function add(Request $request){
+        
+        dd($request->all());
         $expense = Expense::create(
             [
                 
@@ -132,6 +134,5 @@ class KharchaController extends Controller
 
         );
         return redirect()->back()->with('success','Expense Added');
-        dd($request->all());
     }
 }
