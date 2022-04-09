@@ -31,7 +31,7 @@
             <div class="row">
             <div class="col-md-12 col-lg-5">
                 <form method="POST" action="{{route('kharcha-add')}}">
-                    @csrf
+                    {{ csrf_field() }}
                     <div class="form-group">
                         <label for="select"><strong>Paid By</strong> </label>
                         <select required name="paid_by" class="form-control" id="select">

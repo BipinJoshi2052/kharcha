@@ -122,7 +122,7 @@ class KharchaController extends Controller
 
     public function add(Request $request){
         
-        dd($request->all());
+        // dd($request->all());
         $expense = Expense::create(
             [
                 
