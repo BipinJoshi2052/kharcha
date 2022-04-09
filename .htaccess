@@ -1,10 +1,8 @@
-<IfModule mod_rewrite.c>
-    RewriteEngine On 
-    RewriteCond %{HTTPS} off 
-    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-    RewriteCond %{REQUEST_URI} !^public
-    RewriteRule ^(.*)$ public/$1 [L]
-</IfModule>
+RewriteEngine on
+
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} !^www\.
+RewriteRule ^ https://www.designerbinod.com%{REQUEST_URI} [NE,L,R=301]
 
 # php -- BEGIN cPanel-generated handler, do not edit
 # Set the “ea-php73” package as the default “PHP” programming language.
